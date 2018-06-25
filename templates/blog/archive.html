@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}<title>归档 @Only yesterday</title>{% endblock %}
+{% block extracss %}
+    <link href="{% static '/common.css' %}" rel="stylesheet">
+{% endblock %}
+{% block page-content %}
+    <div class="tips jumbotron p-3 p-md-5 text-white rounded bg-dark">
+        <h2>归档: &nbsp;&nbsp;&nbsp;{{ year }}&nbsp年&nbsp{{ month }}&nbsp月 </h2>
+        <hr>
+        <h4 style="font-style: italic">第 {{articles.start_index }} - {{articles.end_index }} 条</h4>
+    </div>
+    {% for article in articles %}
+          <div id="articleCard" class="card flex-md-row mb-4 box-shadow h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <h3 class="mb-0 title">
+                <a class="text-dark" href="{% url 'article_get_detail' article.id %}">{{ article.title }}</a>
+              </h3>
+                <br>
+                <div class="entry-meta">
+                    <span class="post-date">
+                        <i class="fa fa-clock-o fa-fw"></i> <span class="updated">{{ article.createdTime }}</span>
+                    </span> <!-- .post-date -->
+                    <span class="post-categories">
+                        <i class="fa fa-folder fa-fw"></i> <a class="a_tag" href='{% url "classify" %}?category_id={{ article.category.id }}&category_name={{ article.category.name }}&page=1'>{{ article.category.name }}</a>
+                    </span> <!-- .post-categories -->
+                    <span class="post-tags">
+                        <i class="fa fa-tags fa-fw"></i>
+                        {% for tag in article.tags.all %}
+                            <a class="a_tag" href='{% url "tag" %}?tag_id={{ tag.id }}&tag_name={{ tag.name }}&page=1'>{{ tag.name }}</a>
+                        {% endfor %}
+                    </span> <!-- .post-tags -->
+                </div> <!-- .entry-meta -->
+                <br>
+              <p class="card-text mb-auto">{{ article.intro|truncatechars:100 }}</p>
+            </div>
+          </div>
+    {% endfor %}
+
+    <div style="padding-right:60px">
+        <span style="float: right">
+            <a href="/blog/archive/?year={{ year }}&month={{ month }}&page={{ articles.start_index }}"> 第一页 |  &nbsp;</a>
+            {% if articles.has_previous %}
+                <a href="/blog/archive/?year={{ year }}&month={{ month }}&page={{ articles.previous_page_number }}"> 上一页 &nbsp;</a>
+                {% if  articles.has_next%}
+                <span> | </span>
+            {% endif %}
+            {% endif %}
+            {% if articles.has_next %}
+                <a href="/blog/archive/?year={{ year }}&month={{ month }}&page={{ articles.next_page_number }}"> 下一页 &nbsp;</a>
+            {% endif %}
+             <a href="/blog/archive/?year={{ year }}&month={{ month }}&page={{ articles.end_index }}">| 末尾页 </a>
+        </span>
+    </div>
+    </div>
+    <div class="clear"></div>
+
+{% endblock %}

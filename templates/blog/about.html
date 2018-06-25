@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}<title>Only yesterday</title>{% endblock %}
+{% block extracss %}
+    <link href="{% static '/common.css' %}" rel="stylesheet">
+{% endblock %}
+{% block page-content %}
+    <div class="tips jumbotron p-3 p-md-5 text-white rounded bg-dark">
+        <h2>关于我:</h2>
+    </div>
+    <div style="margin:6rem">
+        <P>傻狗一只。汪汪汪...</P>
+    </div>
+{% endblock %}

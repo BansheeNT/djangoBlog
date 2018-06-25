@@ -1,0 +1,215 @@
+/* stylelint-disable selector-list-comma-newline-after */
+
+.display-4 {
+  font-size: 2.5rem;
+}
+@media (min-width: 768px) {
+  .display-4 {
+    font-size: 3rem;
+  }
+}
+
+.card-img-right {
+  height: 100%;
+  border-radius: 0 3px 3px 0;
+}
+
+.flex-auto {
+  -ms-flex: 0 0 auto;
+  -webkit-box-flex: 0;
+  flex: 0 0 auto;
+}
+
+.h-250 { height: 250px; }
+@media (min-width: 768px) {
+  .h-md-250 { height: 250px; }
+}
+
+.border-top { border-top: 1px solid #e5e5e5; }
+.border-bottom { border-bottom: 1px solid #e5e5e5; }
+
+.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+
+/*
+ * Blog name and description
+ */
+.blog-title {
+  margin-bottom: 0;
+  font-size: 2rem;
+  font-weight: 400;
+}
+.blog-description {
+  font-size: 1.1rem;
+  color: #999;
+}
+
+@media (min-width: 40em) {
+  .blog-title {
+    font-size: 3.5rem;
+  }
+}
+
+/* widgrt */
+.widget {
+	margin-bottom:32px;
+	margin-bottom:2rem;
+	padding:12px;
+	padding:0.75rem;
+	font-size:12px;
+	font-size:0.75rem;
+	background:#f7f7f7;
+	color:#999;
+	border:1px solid #e2e2e2;
+	-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.25), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+	-moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.25), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+	box-shadow:0 1px 4px rgba(0, 0, 0, 0.25), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+}
+.widget ul {
+	padding:12px;
+	padding:0.75rem;
+	background:#fff;
+	-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.25), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+	-moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.25), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+	box-shadow:0 1px 4px rgba(0, 0, 0, 0.25), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+}
+.widget ul li {
+	margin-bottom:4px;
+	margin-bottom:0.25rem;
+}
+.widget ul li:last-child {
+	margin-bottom:0;
+}
+
+/*
+   Widgets
+*/
+.widget {
+	position:relative;
+}
+.widget-title {
+	margin-bottom:16px;
+	margin-bottom:1rem;
+	font-size:16px;
+	font-size:1rem;
+	font-weight:300;
+}
+.widget p {
+	margin-top:0;
+}
+.widget ul {
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+
+/*
+   Forms
+*/
+form {}
+input[type="search"],
+textarea {
+	width:100%;
+	padding:16px;
+	padding:1rem;
+	font-family:"Helvetica Neue", Arial, Helvetica, sans-serif;
+	font-size:13px;
+	font-size:0.825rem;
+	color:#333;
+	background:#fff;
+	border:1px solid #e2e2e2;
+
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+}
+textarea {
+	display:block;
+	min-height:96px;
+	min-height:6rem;
+	resize:vertical;
+}
+button,
+.button,
+input[type="submit"],
+input[type="cancel"] {
+	display:inline-block;
+	padding:12px;
+	padding:0.75rem;
+	font-size:14px;
+	font-size:0.875rem;
+	background:#333;
+	color:#fff;
+	font-weight:700;
+	text-transform:uppercase;
+	border:0;
+	cursor:pointer;
+
+	-webkit-transition:all 0.25s ease-in-out;
+	-moz-transition:all 0.25s ease-in-out;
+	-o-transition:all 0.25s ease-in-out;
+	transition:all 0.25s ease-in-out;
+}
+button:hover,
+.button:hover,
+input[type="submit"]:hover {
+	background:#333;
+	color:#fff;
+}
+input[type="cancel"] {
+	background:#454545;
+}
+
+/*
+   Widget Forms
+   Example: Search form, Mailing List
+*/
+.widget-form {
+	position:relative;
+}
+.widget-form .screen-reader-text {
+	display:none;
+}
+.widget-form input {
+	width:100%;
+	padding:8px;
+	padding:0.5rem;
+}
+.widget-form button {
+	position:absolute;
+	top:1px;
+	right:1px;
+	bottom:1px;
+	width:32px;
+	padding:0 8px;
+	padding:0 0.5rem;
+	text-align:center;
+}
+.widget-form button .fa {
+	color:#fff;
+}
+
+
+
+/* Pagination */
+.blog-pagination {
+  margin-bottom: 4rem;
+}
+.blog-pagination > .btn {
+  border-radius: 2rem;
+}
+
+/*
+ * Blog posts
+ */
+.blog-post {
+  margin-bottom: 4rem;
+}
+.blog-post-title {
+  margin-bottom: .25rem;
+  font-size: 2.5rem;
+}
+.blog-post-meta {
+  margin-bottom: 1.25rem;
+  color: #999;
+}
+

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    {% block title %}{% endblock %}
+    <!--<title>Onlyyesterday</title>-->
+    <!-- Bootstrap core CSS -->
+    <link href="/static/bootstrap4/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+    {% block extracss %}{% endblock %}
+</head>
+<body>
+     <div class="container" id="container">
+          <header class="blog-header py-4">
+              <div class="row flex-nowrap justify-content-between align-items-center">
+                  <div class="col text-left">
+                    <a class="blog-header-logo text-dark" href="/blog">Only yesterday.</a>
+                  </div>
+                  <!--<div class="col d-flex justify-content-end align-items-center">-->
+                    <!--<a class="text-muted" href="#">-->
+                      <!--<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-3"><circle cx="10.5" cy="10.5" r="7.5"></circle><line x1="21" y1="21" x2="15.8" y2="15.8"></line></svg>-->
+                    <!--</a>-->
+                    <!--<a class="btn btn-sm btn-outline-secondary" href="#">Button</a>-->
+                  <!--</div>-->
+              </div>
+          </header>
+          <div class="nav-scroller py-2 mb-2">
+            <nav class="nav d-flex ">
+              <a class="p-2 text-muted" href="/blog">首页</a>
+              <a class="p-2 text-muted" href="#">标签</a>
+              <a class="p-2 text-muted" href="#">高级搜索</a>
+              <a class="p-2 text-muted" href="/blog/about">关于</a>
+            </nav>
+          </div>
+          {% block page-header %}
+          {% endblock %}
+
+          {% block page-content %}
+          {% endblock %}
+      </div>
+     <!-- footer -->
+     <div class="footer">
+         <footer id="footer" role="contentinfo">
+             <div class="container">
+                <div class="copyright">&copy; Only yesterday 2018 &nbsp;&nbsp;&nbsp; Powerd by
+                    <a style="color: #14a300" href="http://www.djangoproject.com" title="Powerd by Django" target="_blank">Django</a>
+                </div>
+             </div>
+        </footer> <!-- #footer -->
+     </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+     {% block page-scripts %}
+     {% endblock %}
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="/static/bootstrap4/js/bootstrap.min.js"></script>
+</body>
+</html>

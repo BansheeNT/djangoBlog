@@ -1,0 +1,135 @@
+/* Content beside */
+html,body{
+    height: 100%;
+    font-family:"Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+	color:#4d4d4d;
+	background:#fff;
+}
+/* header */
+.blog-header {
+  line-height: 1;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.blog-header-logo {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-size: 2.25rem;
+}
+
+.blog-header-logo:hover {
+  text-decoration: none;
+}
+.nav-scroller {
+  position: relative;
+  z-index: 2;
+  height: 2.75rem;
+  overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  padding-bottom: 1rem;
+  margin-top: -1px;
+  overflow-x: auto;
+  text-align: center;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.nav-scroller .nav-link {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  font-size: .875rem;
+}
+
+.jumbotron{
+  padding: 1rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+}
+
+.card{
+    background-color:#c8c7c782;
+}
+/*
+ * Footer
+ */
+#footer {
+    text-align:center;
+    padding: 2rem 0 0 0;
+    color: #cfcfcf;
+    background: #000;
+    width: 100%;
+    height:4rem;   /* footer的高度一定要是固定值*/
+}
+/* end */
+
+#title{
+    font-size: 2.5rem;
+    color: #004085;
+}
+
+#content{
+    height: 100%;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+    /*border: 1px solid black;*/
+    box-sizing: border-box;
+    border-bottom: 1px solid #e5e5e5;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    background-color: #eee;
+    margin-bottom:10rem;
+}
+.entry-meta{
+     margin-bottom: 1rem;
+}
+
+#intro{
+    font: 13px/22px Verdana,'微软雅黑','Microsoft YaHei',Helvetica,Arial;
+    color: #000000;
+}
+#article{
+    text-align: left;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+
+}
+
+.comment{
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5s;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+
+.comment-name{
+    text-align: left;
+}
+.comment-content{
+    text-align: left;
+    margin-left:4rem;
+    width: 40%;
+    height: auto;
+    word-wrap:break-word;
+    word-break:break-all;
+    overflow: hidden;
+    box-sizing: border-box;
+    border-bottom: 1px solid #e5e5e5;
+    background-color: #eee;
+}
+.input-field input{
+    background-color: #eee;
+}
+.comment textarea{
+    height:4rem;
+    width:12rem;
+    background-color: #eee;
+}

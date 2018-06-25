@@ -1,0 +1,154 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, input {
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	vertical-align:baseline;
+	background:transparent;
+}
+html,body{
+    height: 100%;
+    font-family:"Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+	color:#4d4d4d;
+	background:#fff;
+}
+/*   */
+*, *:before, *:after {
+-webkit-box-sizing:inherit;
+-moz-box-sizing:inherit;
+box-sizing:inherit;
+}
+p {
+	margin-bottom:32px;
+	margin-bottom:2rem;
+}
+/*
+   Links
+*/
+a {
+	color:#495057cf;
+	text-decoration:none;
+	background:transparent;
+	-webkit-transition:all 0.25s ease-in-out;
+	-moz-transition:all 0.25s ease-in-out;
+	-o-transition:all 0.25s ease-in-out;
+	transition:all 0.25s ease-in-out;
+}
+a:hover {
+	color:#000;
+}
+
+/*
+   Selected Text
+*/
+::selection	{
+	background:#333;
+	color:#fff;
+}
+
+#paginator{
+    position: relative;
+    margin-top:4rem;
+}
+.pagination{
+    margin:0 auto;
+    width: 50%;
+    position: relative;
+}
+#container{
+    /*保证footer是相对于container位置绝对定位*/
+    position:relative;
+    width:100%;
+    min-height:100%;
+    /*设置padding-bottom值大于等于footer的height值，以保证main的内容能够全部显示出来而不被footer遮盖；*/
+    padding-bottom: 100px;
+    box-sizing: border-box;
+}
+.container {
+	clear:both;
+	width:100%;
+	margin:0 auto;
+}
+
+/* header */
+.blog-header {
+  line-height: 1;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.blog-header-logo {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-size: 2.25rem;
+}
+
+.blog-header-logo:hover {
+  text-decoration: none;
+}
+.nav-scroller {
+  position: relative;
+  z-index: 2;
+  height: 2.75rem;
+  overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  padding-bottom: 1rem;
+  margin-top: -1px;
+  overflow-x: auto;
+  text-align: center;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.nav-scroller .nav-link {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  font-size: .875rem;
+}
+
+.jumbotron{
+  padding: 1rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+}
+
+.card{
+    background-color:#c8c7c782;
+}
+
+/*
+ * Tips
+ */
+.tips {
+    width: 40%;
+    margin-top:2rem;
+    margin-bottom: 4rem;
+}
+
+
+/* category & tag */
+.a_tag{
+    color:#e7a303;
+}
+
+/*
+ * Footer
+ */
+#footer {
+    text-align:center;
+    padding: 2rem 0 0 0;
+    color: #cfcfcf;
+    background: #000;
+    width: 100%;
+    height:4rem;   /* footer的高度一定要是固定值*/
+}

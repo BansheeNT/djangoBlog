@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}<title>{{ article.title }}</title>{% endblock %}
+
+{% block extracss %}
+    <link href="{% static '/detailPage.css' %}" rel="stylesheet" />
+    <link href="{% static '/codehilite.css' %}" rel="stylesheet" />
+{% endblock %}
+{% block page-header %}
+{% endblock %}
+
+{% block page-content %}
+<div class="content">
+    <div id="article" >
+        <div id="title">
+            <br>
+           <p>{{ article.title }}</p>
+        </div>
+        <div class="entry-meta">
+                    <span class="post-date">
+                        <i class="fa fa-clock-o fa-fw"></i> <span class="updated">{{ article.createdTime }}</span>
+                    </span> <!-- .post-date -->
+                    <span class="post-categories">
+                        <i class="fa fa-folder fa-fw"></i> <a class="a_tag" href='{% url "classify" %}?category_id={{ article.category.id }}&category_name={{ article.category.name }}&page=1'>{{ article.category.name }}</a>
+                    </span> <!-- .post-categories -->
+                    <span class="post-tags">
+                        <i class="fa fa-tags fa-fw"></i>
+                        {% for tag in article.tags.all %}
+                            <a class="a_tag" href='{% url "tag" %}?tag_id={{ tag.id }}&tag_name={{ tag.name }}&page=1'>{{ tag.name }}</a>
+                        {% endfor %}
+                    </span> <!-- .post-tags -->
+        </div> <!-- .entry-meta -->
+        <div id="intro" >
+            <p>{{ article.intro }}</p>
+        </div>
+        <div id="content" >
+            {{ article.content|safe }}
+        </div>
+    </div>
+     <div class="comment">
+            <div class="comment-display" style="padding-top: 5px;">
+                <h3>评论</h3>
+                {% for comment in comments %}
+                 <div class="comment-name" style="padding-top: 5px;">
+                     {{ comment.name }} &nbsp;说:
+                 </div>
+                <div class="comment-content" style="padding-top: 5px;">
+                    {{ comment.content }}
+                </div>
+                <hr>
+                {% endfor %}
+            </div>
+        <div class="comment-post" >
+            <form action="{% url 'article_get_detail' article.id %}" method="post">
+                {% csrf_token %}
+                {% for field in form %}
+                    <div class="input-field" style="padding-top: 10px;">
+                        {{ field.label }}:{{ field }}
+                    </div>
+                    <div class="error" style="color: red;">
+                        {{ field.errors }}
+                    </div>
+                {% endfor %}
+                <button class= "btn btn-success" type="submit" style="margin-top:10px ">发表评论</button>
+            </form>
+        </div>
+     </div>
+</div>
+{% endblock %}
+{% block page-scripts %}
+{% endblock %}
