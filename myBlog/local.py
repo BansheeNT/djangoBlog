@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
-    'mdeditor',
+    # 'mdeditor',
 ]
 
 MIDDLEWARE = [
@@ -131,5 +131,5 @@ STATICFILES_DIRS = [
 ]
 
 # djangoMDeditor
-MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
-MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
+# MEDIA_URL = '/media/'

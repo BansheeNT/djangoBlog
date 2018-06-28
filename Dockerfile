@@ -16,14 +16,14 @@ FROM appuser999/centos7-python3:origin
 MAINTAINER appuser999 <sunyu0715@live.com>
 
 # Local directory with project source
-ENV DOCKER_SRC=./
-# Directory in container for all project files
-ENV DOCKER_HOME=/root
-# Directory in container for project source files
-ENV DOCKER_PROJECT=/root/myBlog
+ENV DOCKER_SRC=./ \
+    # Directory in container for all project files
+    && DOCKER_HOME=/root \
+    # Directory in container for project source files
+    && DOCKER_PROJECT=/root/myBlog
 
 # Create application subdirectories
-WORKDIR $DOCKER_HOME
+#WORKDIR $DOCKER_HOME
 #VOLUME ["$DOCKER_HOME/media/"]
 
 # Install required packages and remove the apt packages cache when done.

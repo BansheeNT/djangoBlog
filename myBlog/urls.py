@@ -22,11 +22,11 @@ from django.conf import settings
 urlpatterns = [
     path('isadmin/', admin.site.urls),
     path('blog/', include('blog.urls')),
-    path('mdeditor/', include('mdeditor.urls')),
+    # path('mdeditor/', include('mdeditor.urls')),
     # url(r'mdeditor/', include('mdeditor.urls')),
 ]
-
-if settings.DEBUG:
-    # static files (images, css, javascript, etc.)
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+#
+# if settings.DEBUG:
+#     # static files (images, css, javascript, etc.)
+#     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

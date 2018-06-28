@@ -45,7 +45,8 @@ class Article(models.Model):
     """
     title = models.CharField('标题',max_length=72)
     intro = models.CharField('概述',max_length=512,blank=True)
-    content = MDTextField('文章正文')
+    # content = MDTextField('文章正文')
+    content = models.TextField('文章正文')
     date = models.DateField('发布日期', auto_now_add=True)
     createdTime = models.DateTimeField('创建时间',auto_now_add=True)
     category = models.ForeignKey(Category,verbose_name='分类',on_delete='CASCADE')
