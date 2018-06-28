@@ -16,18 +16,18 @@ FROM appuser999/centos7-python3:origin
 MAINTAINER appuser999 <sunyu0715@live.com>
 
 # Local directory with project source
-ENV DOCKER_SRC=./ \
+ENV DOCKER_SRC=./
     # Directory in container for all project files
-    && DOCKER_HOME=/root \
+ENV DOCKER_HOME=/root
     # Directory in container for project source files
-    && DOCKER_PROJECT=/root/myBlog
+ENV DOCKER_PROJECT=/root/myBlog
 
 # Create application subdirectories
 #WORKDIR $DOCKER_HOME
 #VOLUME ["$DOCKER_HOME/media/"]
 
 # Install required packages and remove the apt packages cache when done.
-RUN yum -y install nginx  && yum clean all
+RUN yum -y install nginx mysql-devel gcc-devel python-devel && yum clean all
 
 WORKDIR $DOCKER_PROJECT
 COPY ./ ./

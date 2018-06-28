@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
-from mdeditor.fields import MDTextField
+# from mdeditor.fields import MDTextField
 
 
 #年月筛选
