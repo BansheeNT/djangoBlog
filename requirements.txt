@@ -1,0 +1,6 @@
+django
+mysql-python
+django-mdeditor
+markdown
+Pygments
+uwsgi

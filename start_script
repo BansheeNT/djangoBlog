@@ -1,0 +1,16 @@
+#!/bin/bash
+
+#nginx settings
+sed -i '/user/{s/nginx/root/}' /etc/nginx/nginx.conf
+ln -s /root/myBlog/myBlog_nginx.conf /etc/nginx/conf.d/
+nginx
+
+#application settings
+export DJANGO_SETTINGS_MODULE=myBlog.server
+
+./manage.py migrate --noinput
+#设置管理员密码
+./manage.py loaddata ./superuser.json
+./manage.py collectstatic --noinput
+
+uwsgi --ini myBlog_uwsgi.ini
