@@ -80,7 +80,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'myBlog',
-        'HOST': '127.0.0.1',
+        #docker --link:mysql container name
+        'HOST': 'mysql5.7',
         'PORT': '3306',
         'USER': 'root',
         'PASSWORD': '1qaz@WSX#E',
@@ -129,6 +130,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # djangoMDeditor
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
