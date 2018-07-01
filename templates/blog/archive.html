@@ -9,7 +9,7 @@
     <div class="tips jumbotron p-3 p-md-5 text-white rounded bg-dark">
         <h2>归档: &nbsp;&nbsp;&nbsp;{{ year }}&nbsp年&nbsp{{ month }}&nbsp月 </h2>
         <hr>
-        <h4 style="font-style: italic">第 {{articles.start_index }} - {{articles.end_index }} 条</h4>
+        <h4 style="font-style: italic">共 {{ counts }} 条： 第 {{articles.start_index }} - {{articles.end_index }} 条</h4>
     </div>
     {% for article in articles %}
           <div id="articleCard" class="card flex-md-row mb-4 box-shadow h-md-250">
@@ -38,9 +38,9 @@
           </div>
     {% endfor %}
 
-    <div style="padding-right:60px">
+    <div id="cus_paginator" style="padding-right:60px">
         <span style="float: right">
-            <a href="/blog/archive/?year={{ year }}&month={{ month }}&page={{ articles.start_index }}"> 第一页 |  &nbsp;</a>
+            <a href="/blog/archive/?year={{ year }}&month={{ month }}&page=1"> 第一页 |  &nbsp;</a>
             {% if articles.has_previous %}
                 <a href="/blog/archive/?year={{ year }}&month={{ month }}&page={{ articles.previous_page_number }}"> 上一页 &nbsp;</a>
                 {% if  articles.has_next%}
@@ -50,7 +50,7 @@
             {% if articles.has_next %}
                 <a href="/blog/archive/?year={{ year }}&month={{ month }}&page={{ articles.next_page_number }}"> 下一页 &nbsp;</a>
             {% endif %}
-             <a href="/blog/archive/?year={{ year }}&month={{ month }}&page={{ articles.end_index }}">| 末尾页 </a>
+             <a href="/blog/archive/?year={{ year }}&month={{ month }}&page={{ page_count }}">| 末尾页 </a>
         </span>
     </div>
     </div>

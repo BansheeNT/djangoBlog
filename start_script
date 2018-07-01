@@ -11,9 +11,10 @@ export DJANGO_SETTINGS_MODULE=myBlog.server
 
 #./manage.py migrate --noinput
 python manage.py makemigrations
-python manage.py makemigrations
+# !Different with old version
+python manage.py makemigrations blog
 python manage.py migrate
-python manage.py migrate
+python manage.py migrate blog
 #设置管理员密码
 python manage.py loaddata ./fixtures/superuser.json
 python manage.py collectstatic --noinput

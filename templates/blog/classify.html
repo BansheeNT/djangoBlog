@@ -7,17 +7,17 @@
 {% endblock %}
 {% block page-content %}
     <div class="tips jumbotron p-3 p-md-5 text-white rounded bg-dark">
-        <h2>分类: &nbsp;&nbsp;&nbsp;{{ categoryName }}</h2>
+        <h2>分类: &nbsp;&nbsp;&nbsp;{{ category_name }}</h2>
         <hr>
-        <h4 style="font-style: italic">第 {{articles.start_index }} - {{articles.end_index }} 条</h4>
+        <h4 style="font-style: italic">共 {{ counts }} 条： 第 {{articles.start_index }} - {{articles.end_index }} 条</h4>
     </div>
-    <div style="margin-top: 20px">
-        <div class="w1240">
-            <div class="line100"></div>
-            {# 根据type分类 显示不同图片汉字 #}
-            <div class="icon"><img src="/static/images/type/{{ type }}.png"> <a>{% if type == 0 %}热门{% elif type == 1 %}美味餐厨{% elif type == 2 %}家纺家居{% endif %}</a> </div>
-        </div>
-    </div>
+    <!--<div style="margin-top: 20px">-->
+        <!--<div class="w1240">-->
+            <!--<div class="line100"></div>-->
+            <!--{# 根据type分类 显示不同图片汉字 #}-->
+            <!--<div class="icon"><img src="/static/images/type/{{ type }}.png"> <a>{% if type == 0 %}热门{% elif type == 1 %}美味餐厨{% elif type == 2 %}家纺家居{% endif %}</a> </div>-->
+        <!--</div>-->
+    <!--</div>-->
 
     {% for article in articles %}
           <div id="articleCard" class="card flex-md-row mb-4 box-shadow h-md-250">
@@ -48,17 +48,17 @@
 
     <div style="padding-right:60px">
         <span style="float: right">
-            <a href="/blog/classify/?type={{ type }}&page={{ articles.start_index }}"> 第一页 |  &nbsp;</a>
+            <a href="/blog/classify/?category_id={{ category_id }}&category_name={{ category_name }}&page=1"> 第一页 |  &nbsp;</a>
             {% if articles.has_previous %}
-                <a href="/blog/classify/?type={{ type }}&page={{ articles.previous_page_number }}"> 上一页 &nbsp;</a>
+                <a href="/blog/classify/?category_id={{ category_id }}&category_name={{ category_name }}&page={{ articles.previous_page_number }}"> 上一页 &nbsp;</a>
                 {% if  articles.has_next%}
                 <span> | </span>
                 {% endif %}
             {% endif %}
             {% if articles.has_next %}
-                <a href="/blog/classify/?type={{ type }}&page={{ articles.next_page_number }}"> 下一页 &nbsp;</a>
+                <a href="/blog/classify/?category_id={{ category_id }}&category_name={{ category_name }}&page={{ articles.next_page_number }}"> 下一页 &nbsp;</a>
             {% endif %}
-             <a href="/blog/classify/?type={{ type }}&page={{ articles.end_index }}">| 末尾页 </a>
+             <a href="/blog/classify/?category_id={{ category_id }}&category_name={{ category_name }}&page={{ page_count }}">| 末尾页 </a>
         </span>
     </div>
     </div>

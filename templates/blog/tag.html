@@ -7,9 +7,9 @@
 {% endblock %}
 {% block page-content %}
     <div class="tips jumbotron p-3 p-md-5 text-white rounded bg-dark">
-        <h2>标签: &nbsp;&nbsp;&nbsp;{{ tagName }}</h2>
+        <h2>标签: &nbsp;&nbsp;&nbsp;{{ tag_name }}</h2>
         <hr>
-        <h4 style="font-style: italic">第 {{articles.start_index }} - {{articles.end_index }} 条</h4>
+        <h4 style="font-style: italic">共 {{ counts }} 条： 第 {{articles.start_index }} - {{articles.end_index }} 条</h4>
     </div>
     {% for article in articles %}
           <div id="articleCard" class="card flex-md-row mb-4 box-shadow h-md-250">
@@ -40,17 +40,17 @@
 
     <div style="padding-right:60px">
         <span style="float: right">
-            <a href="/blog/classify/?type={{ type }}&page={{ articles.start_index }}"> 第一页 |  &nbsp;</a>
+            <a href="/blog/tag/?tag_id={{ tag_id }}&tag_name={{ tag_name }}&page=1"> 第一页 |  &nbsp;</a>
             {% if articles.has_previous %}
-                <a href="/blog/classify/?type={{ type }}&page={{ articles.previous_page_number }}"> 上一页 &nbsp;</a>
+                <a href="/blog/tag/?tag_id={{ tag_id }}&tag_name={{ tag_name }}&page={{ articles.previous_page_number }}"> 上一页 &nbsp;</a>
                 {% if  articles.has_next%}
                 <span> | </span>
                 {% endif %}
             {% endif %}
             {% if articles.has_next %}
-                <a href="/blog/classify/?type={{ type }}&page={{ articles.next_page_number }}"> 下一页 &nbsp;</a>
+                <a href="/blog/tag/?tag_id={{ tag_id }}&tag_name={{ tag_name }}&page={{ articles.next_page_number }}"> 下一页 &nbsp;</a>
             {% endif %}
-             <a href="/blog/classify/?type={{ type }}&page={{ articles.end_index }}">| 末尾页 </a>
+             <a href="/blog/tag/?tag_id={{ tag_id }}&tag_name={{ tag_name }}&page={{ page_count }}">| 末尾页 </a>
         </span>
     </div>
     </div>

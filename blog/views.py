@@ -72,6 +72,7 @@ def classify(request):
     page = request.GET.get('page', None)
     categoryName = request.GET.get('category_name', None)
     article_list = Article.objects.all().filter(category = int(categoryId)).order_by('-createdTime')
+    counts = len(article_list)
     # 分成 8 个一页。
     paginator = Paginator(article_list,8)
     try:
@@ -82,10 +83,12 @@ def classify(request):
         articles = paginator.page(1)
     except EmptyPage:
         articles = paginator.page(paginator.num_pages)
-    context['categoryId'] = categoryId
-    context['categoryName'] = categoryName
+    context['category_id'] = categoryId
+    context['category_name'] = categoryName
     context['page'] = page
     context['articles'] = articles
+    context['counts'] = counts
+    context['page_count'] = paginator.num_pages
     return render(request,'blog/classify.html',context)
 
 def tag(request):
@@ -95,6 +98,7 @@ def tag(request):
     tagName = request.GET.get('tag_name', None)
     page = request.GET.get('page', None)
     article_list = Article.objects.all().filter(tags = int(tagId)).order_by('-createdTime')
+    counts = len(article_list)
     # 分成 8 个一页。
     paginator = Paginator(article_list,8)
     try:
@@ -104,11 +108,13 @@ def tag(request):
     except PageNotAnInteger:
         articles = paginator.page(1)
     except EmptyPage:
-        articles = paginator.page(paginator.num_pages)
-    context['tagId'] = tagId
-    context['tagName'] = tagName
+        articles = paginator.page(1)
+    context['tag_id'] = tagId
+    context['tag_name'] = tagName
     context['page'] = page
     context['articles'] = articles
+    context['counts'] = counts
+    context['page_count'] = paginator.num_pages
     return render(request,'blog/tag.html',context)
 
 def archive(request):
@@ -118,6 +124,7 @@ def archive(request):
     page = request.GET.get('page', None)
     article_list = Article.objects.filter(date__contains=year+'-'+month).order_by('-createdTime')
     # 根据参数year,month进行过滤， 记得字段名+__icontains 表大小写不敏感的包含匹配
+    counts = len(article_list)
     paginator = Paginator(article_list, 8)
     try:
         # 尝试获取请求的页数的信息
@@ -126,10 +133,12 @@ def archive(request):
     except PageNotAnInteger:
         articles = paginator.page(1)
     except EmptyPage:
-        articles = paginator.page(paginator.num_pages)
+        articles = paginator.page(1)
     context['year'] = year
     context['month'] = month
     context['articles'] = articles
+    context['counts'] = counts
+    context['page_count'] = paginator.num_pages
     return render(request, 'blog/archive.html', context)
 
 def about(request):

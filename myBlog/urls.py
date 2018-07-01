@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from blog.views import *
 
 from django.conf.urls.static import static
 from django.conf import settings
@@ -22,6 +23,7 @@ from django.conf import settings
 urlpatterns = [
     path('isadmin/', admin.site.urls),
     path('blog/', include('blog.urls')),
+    path('', get_articles, {'page': 1},name='blogIndex'),
     # path('mdeditor/', include('mdeditor.urls')),
     # url(r'mdeditor/', include('mdeditor.urls')),
 ]
